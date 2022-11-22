@@ -15,13 +15,13 @@ export default function Cesta({ detalhes, itens, produtor }) {
     <FlatList
       data={itens}
       renderItem={Item}
-      keyExtractor={({ nome }) => nome }
+      keyExtractor={({ nome }) => nome}
       ListHeaderComponent={() => {
         return <>
           <Topo titulo={topoCesta} />
           <View style={estilos.cesta}>
             <Detalhes {...detalhes} produtor={produtor} />
-            <Texto style={estilos.titulo}>{ tituloItens }</Texto>
+            <Texto style={estilos.titulo}>{tituloItens}</Texto>
           </View>
         </>
       }}
