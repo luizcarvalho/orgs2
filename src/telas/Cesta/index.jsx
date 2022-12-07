@@ -14,10 +14,6 @@ export default function Cesta() {
   const { detalhes, itens, produtor } = route.params;
   const { topoCesta, tituloItens } = useTextos();
 
-  console.log('====================================');
-  console.log(detalhes);
-  console.log('====================================');
-
   return <>
     <FlatList
       data={itens}
