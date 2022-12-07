@@ -1,13 +1,14 @@
 import React from 'react';
 import { useRoute } from '@react-navigation/native';
-
-import { Text, StyleSheet, FlatList, View, Image } from 'react-native';
-import Cesta from './componentes/Cesta';
-
 import useTextos from '../../hooks/useTextos';
 
-import topo from '../../assets/produtores/topo.png';
+import { Text, StyleSheet, FlatList, View, Image } from 'react-native';
+
+import Cesta from './componentes/Cesta';
 import Topo from '../../componentes/Topo';
+
+
+import topo from '../../assets/produtores/topo.png';
 
 function Produtor() {
   const route = useRoute();

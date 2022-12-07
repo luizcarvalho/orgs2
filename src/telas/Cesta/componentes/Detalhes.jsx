@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native'
 import { Image, StyleSheet, View, TouchableOpacity } from 'react-native';
 
 import useTextos from '../../../hooks/useTextos';
@@ -6,20 +7,21 @@ import Texto from '../../../componentes/Texto';
 
 export default function Detalhes({ nome, produtor, descricao, preco }) {
   const { botaoComprar } = useTextos();
+  const navigation = useNavigation();
 
   return <>
-    <Texto style={estilos.nome}>{ nome }</Texto>
+    <Texto style={estilos.nome}>{nome}</Texto>
     <View style={estilos.fazenda}>
       <Image source={produtor.imagem} style={estilos.imagemFazenda} />
-      <Texto style={estilos.nomeFazenda}>{ produtor.nome }</Texto>
+      <Texto style={estilos.nomeFazenda}>{produtor.nome}</Texto>
     </View>
-    <Texto style={estilos.descricao}>{ descricao }</Texto>
-    <Texto style={estilos.preco}>{ preco }</Texto>
+    <Texto style={estilos.descricao}>{descricao}</Texto>
+    <Texto style={estilos.preco}>{preco}</Texto>
 
-    <TouchableOpacity 
-      style={estilos.botao} 
-      onPress={() => {}}>
-      <Texto style={estilos.textoBotao}>{ botaoComprar }</Texto>
+    <TouchableOpacity
+      style={estilos.botao}
+      onPress={() => navigation.popToTop() }>
+      <Texto style={estilos.textoBotao}>{botaoComprar}</Texto>
     </TouchableOpacity>
   </>
 }
